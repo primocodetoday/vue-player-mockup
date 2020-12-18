@@ -1,16 +1,22 @@
 <template>
   <div class="container">
     <TopOptions />
-    <Title />
+    <Title :current="current" />
   </div>
 </template>
 
 <script>
-import TopOptions from "@/components/modules/TopOptions.vue";
-import Title from "@/components/modules/Title.vue";
+import TopOptions from "@/components/molecules/TopOptions.vue";
+import Title from "@/components/molecules/Title.vue";
 
 export default {
   name: "Panel",
+  props: {
+    current: {
+      type: Object,
+      required: true
+    }
+  },
   components: {
     TopOptions,
     Title

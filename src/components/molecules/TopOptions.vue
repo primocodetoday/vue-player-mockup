@@ -5,9 +5,11 @@
       <img class="top__icon" src="@/assets/icons/shuffle.svg" alt="shuffle" />
       <img class="top__icon" src="@/assets/icons/repeat.svg" alt="repeat" />
     </div>
-    <div class="burger">
-      <div class="burger__element"></div>
-    </div>
+    <router-link :to="{ name: 'Playlist' }">
+      <div class="burger">
+        <div class="burger__element"></div>
+      </div>
+    </router-link>
   </div>
 </template>
 
@@ -41,6 +43,10 @@ export default {
     &:last-child {
       margin-right: 0;
     }
+
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 
   .burger {
@@ -50,6 +56,9 @@ export default {
     height: 13px;
     width: 16px;
     cursor: pointer;
+    &:hover {
+      transform: scale(1.15);
+    }
 
     &__element {
       background-color: #707070;

@@ -1,12 +1,19 @@
 <template>
   <div id="app" class="app">
-    <Player />
+    <div class="container">
+      <transition name="slide">
+        <router-view
+          :songs="songs"
+          :current="currentSong"
+          @songChange="handleSongChange"
+          @songNext="handleSongNext"
+        ></router-view>
+      </transition>
+    </div>
   </div>
 </template>
 
 <script>
-import Player from "./views/Player.vue";
-
 export default {
   name: "App",
   data() {
@@ -17,13 +24,26 @@ export default {
         { id: 3, artist: "Icona Pop", title: "Girlfriend", duration: "2:50", isFav: false },
         { id: 4, artist: "Icona Pop", title: "We Got the World", duration: "3:07", isFav: false },
         { id: 5, artist: "Icona Pop", title: "Nights Like This", duration: "3:24", isFav: false }
-      ]
+      ],
+      currentId: 1
     };
   },
-
-  components: {
-    Player
-  }
+  computed: {
+    currentSong() {
+      return this.songs[this.currentId - 1];
+    }
+  },
+  methods: {
+    handleSongChange(id) {
+      this.currentId = id;
+    },
+    handleSongNext(nb) {
+      if (this.currentId + nb >= 1 && this.currentId + nb < this.songs.length + 1) {
+        this.currentId += nb;
+      }
+    }
+  },
+  components: {}
 };
 </script>
 
@@ -59,5 +79,27 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+
+  .container {
+    box-shadow: 0 0 10px -6px black;
+    overflow: hidden;
+    border-radius: 30px;
+    width: 360px;
+    height: 480px;
+  }
+}
+
+.slide-enter-active {
+  transition: all 0.3s linear;
+}
+
+.slide-enter,
+.slide-leave-to {
+  opacity: 0;
+}
+
+.slide-enter-to,
+.slide-leave {
+  opacity: 1;
 }
 </style>

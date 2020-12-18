@@ -1,15 +1,21 @@
 <template>
   <div class="title">
     <div class="title__wrapper">
-      <p class="title__artist">Icona Pop</p>
-      <p class="title__song">Still Don't Know</p>
+      <p class="title__artist">{{ current.artist }}</p>
+      <p class="title__song">{{ current.title }}</p>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "Title"
+  name: "Title",
+  props: {
+    current: {
+      type: Object,
+      required: true
+    }
+  }
 };
 </script>
 

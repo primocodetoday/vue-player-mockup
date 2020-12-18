@@ -13,11 +13,13 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
-    "vue": "^2.6.11"
+    "vue": "^2.6.11",
+    "vue-router": "^3.2.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-plugin-router": "^4.5.9",
     "@vue/cli-service": "~4.5.0",
     "@vue/eslint-config-airbnb": "^5.0.2",
     "@vue/eslint-config-prettier": "^6.0.0",
@@ -46,7 +48,8 @@
       "parser": "babel-eslint"
     },
     "rules": {
-      "no-plusplus": 0
+      "no-plusplus": 0,
+      "import/prefer-default-export": 0
     }
   },
   "browserslist": [

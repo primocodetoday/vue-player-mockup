@@ -6,13 +6,14 @@
       </button>
     </div>
     <div class="controls__center">
-      <button class="button button--prev">
+      <button class="button button--prev" @click="handleNext(-1)">
         <img class="icon" src="@/assets/icons/previous.svg" alt="previous" />
       </button>
-      <button class="button button--play">
-        <img class="icon" src="@/assets/icons/play.svg" alt="pause" />
+      <button class="button button--play" @click="handlePlay">
+        <img v-if="!isPlaying" class="icon" src="@/assets/icons/play.svg" alt="pause" />
+        <img v-else class="icon" src="@/assets/icons/pause.svg" alt="pause" />
       </button>
-      <button class="button button--next">
+      <button class="button button--next" @click="handleNext(1)">
         <img class="icon" src="@/assets/icons/previous.svg" alt="next" />
       </button>
     </div>
@@ -27,7 +28,24 @@
 <script>
 export default {
   name: "Controls",
-  components: {}
+  components: {},
+  data() {
+    return {
+      isPlaying: false
+    };
+  },
+  methods: {
+    handlePlay() {
+      this.isPlaying = !this.isPlaying;
+    },
+    handleNext(choose) {
+      let vm = this.$parent;
+      while (vm) {
+        vm.$emit("songNext", choose);
+        vm = vm.$parent;
+      }
+    }
+  }
 };
 </script>
 
@@ -63,6 +81,10 @@ export default {
     border-radius: 50%;
     cursor: pointer;
     border: none;
+    transition: transform 0.3s linear;
+    &:hover {
+      transform: scale(1.1);
+    }
 
     &--prev,
     &--play,
@@ -80,6 +102,10 @@ export default {
 
     &--next {
       transform: rotate(180deg);
+
+      &:hover {
+        transform: rotate(180deg) scale(1.1);
+      }
     }
   }
 }

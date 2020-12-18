@@ -1,6 +1,6 @@
 <template>
   <div class="player">
-    <Panel />
+    <Panel :current="current" />
     <Progress />
     <Controls />
   </div>
@@ -9,7 +9,7 @@
 <script>
 import Controls from "@/components/organisms/Controls.vue";
 import Panel from "@/components/organisms/Panel.vue";
-import Progress from "@/components/modules/Progress.vue";
+import Progress from "@/components/molecules/Progress.vue";
 
 export default {
   name: "Player",
@@ -17,18 +17,19 @@ export default {
     Controls,
     Panel,
     Progress
+  },
+  props: {
+    current: {
+      type: Object,
+      required: true
+    }
   }
 };
 </script>
 
 <style lang="scss" scoped>
 .player {
-  box-shadow: 0 0 10px -6px black;
-  overflow: hidden;
   display: flex;
   flex-direction: column;
-  border-radius: 30px;
-  width: 360px;
-  height: 480px;
 }
 </style>
