@@ -13,10 +13,10 @@
 
 ### Do zrobienia jeszcze:
 
-- [] Circle Progress Bar
-- [] Volume Input with Range
-- [] List scroll
-- [] Audio playing
+- [ ] Circle Progress Bar
+- [ ] Volume Input with Range
+- [ ] List scroll
+- [ ] Audio playing
 
 ## Project setup
 
