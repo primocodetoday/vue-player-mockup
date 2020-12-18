@@ -10,9 +10,13 @@
 - [x] Po kliknięciu przycisku next/prev w widoku playera użytkownik powinien zobaczyć kolejną/poprzednią piosenkę z listy.
 - [x] Wykorzystanie maksimum natywnych możliwości CSS w zastępstwie dla grafik wyciętych z PSD będzie bardzo mile widziane. Można stosować Font Awesome jako alternatywa dla obrazków.
 - [x] Zwróć szczególną uwagę na jakość, formatowanie i konwencje kodu, ale także na odwzorowanie wizualne i estetyczne widget screen'a.
-- [] Refaktoryzacja i dodatkowe stylowanie (circle progress)
 
-Powodzenia!
+### Do zrobienia jeszcze:
+
+- [] Circle Progress Bar
+- [] Volume Input with Range
+- [] List scroll
+- [] Audio playing
 
 ## Project setup
 
