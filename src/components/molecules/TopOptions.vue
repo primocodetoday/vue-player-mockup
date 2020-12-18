@@ -39,6 +39,7 @@ export default {
     margin-right: 25px;
     filter: invert(0%) sepia(6%) saturate(391%) hue-rotate(280deg) brightness(120%);
     cursor: pointer;
+    transition: transform 0.2s linear;
 
     &:last-child {
       margin-right: 0;
@@ -56,6 +57,8 @@ export default {
     height: 13px;
     width: 16px;
     cursor: pointer;
+    transition: transform 0.2s linear;
+
     &:hover {
       transform: scale(1.15);
     }

@@ -26,7 +26,7 @@ export default {
     right: 0;
     top: 0;
     bottom: 0;
-    background-color: red;
+    background-color: #ed5e74;
     width: 30%;
   }
 

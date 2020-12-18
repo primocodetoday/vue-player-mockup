@@ -41,7 +41,7 @@ export default {
     handleNext(choose) {
       let vm = this.$parent;
       while (vm) {
-        vm.$emit("songNext", choose);
+        vm.$emit("handleNext", choose);
         vm = vm.$parent;
       }
     }

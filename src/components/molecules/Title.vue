@@ -30,17 +30,19 @@ export default {
   bottom: 0;
   right: 0;
   height: 65px;
-  background: rgba(42, 34, 77, 0.6);
+  background-color: rgba(42, 34, 77, 0.6);
 
   &__wrapper {
     color: white;
   }
   &__artist {
+    text-align: center;
     font-size: 1.8rem;
     font-weight: bold;
     margin-bottom: 2px;
   }
   &__song {
+    text-align: center;
     font-size: 1.4rem;
   }
 }

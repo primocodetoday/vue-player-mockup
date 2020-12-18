@@ -1,6 +1,6 @@
 <template>
   <div class="song">
-    <div class="song__credits" @click="handleSongChange(song.id)">
+    <div class="song__credits" @click="handleChange(song.id)">
       <div class="song__top">{{ song.duration }} | {{ song.artist }}</div>
       <div class="song__bottom">{{ song.title }}</div>
     </div>
@@ -21,12 +21,13 @@ export default {
     }
   },
   methods: {
-    handleSongChange(item) {
+    handleChange(item) {
       let vm = this.$parent;
       while (vm) {
-        vm.$emit("songChange", item);
+        vm.$emit("handleChange", item);
         vm = vm.$parent;
       }
+      this.$router.push("/");
     }
   }
 };
@@ -41,6 +42,7 @@ export default {
   padding-bottom: 20px;
   margin-bottom: 20px;
   justify-content: space-between;
+  transition: transform 0.3s linear;
 
   &__credits {
     display: flex;
