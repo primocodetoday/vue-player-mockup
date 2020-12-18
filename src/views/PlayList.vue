@@ -1,5 +1,5 @@
 <template>
-  <div class="player">
+  <div class="playlist">
     <Panel />
     <Progress />
     <Controls />
@@ -7,22 +7,13 @@
 </template>
 
 <script>
-import Controls from "@/components/organisms/Controls.vue";
-import Panel from "@/components/organisms/Panel.vue";
-import Progress from "@/components/modules/Progress.vue";
-
 export default {
-  name: "Player",
-  components: {
-    Controls,
-    Panel,
-    Progress
-  }
+  name: "PlayList"
 };
 </script>
 
 <style lang="scss" scoped>
-.player {
+.playlist {
   box-shadow: 0 0 10px -6px black;
   overflow: hidden;
   display: flex;

@@ -14,7 +14,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "@/styles/mixins.scss";
+@import "@/styles/_mixins.scss";
 
 .title {
   @include flex-center;

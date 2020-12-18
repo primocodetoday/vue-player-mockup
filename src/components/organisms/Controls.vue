@@ -1,30 +1,33 @@
 <template>
   <div class="controls">
     <div class="controls__left">
-      <div class="controls__share">
-        <img class="icon__share" src="@/assets/icons/share.svg" alt="share" />
-      </div>
+      <button class="button button--share">
+        <img class="icon" src="@/assets/icons/share.svg" alt="share" />
+      </button>
     </div>
     <div class="controls__center">
-      <div class="controls__prev">
-        <img class="icon__share" src="@/assets/icons/previous.svg" alt="previous" />
-      </div>
-      <div class="controls__play">
-        <img class="icon__share" src="@/assets/icons/play.svg" alt="pause" />
-      </div>
-      <div class="controls__next">
-        <img class="icon__share" src="@/assets/icons/previous.svg" alt="next" />
-      </div>
+      <button class="button button--prev">
+        <img class="icon" src="@/assets/icons/previous.svg" alt="previous" />
+      </button>
+      <button class="button button--play">
+        <img class="icon" src="@/assets/icons/play.svg" alt="pause" />
+      </button>
+      <button class="button button--next">
+        <img class="icon" src="@/assets/icons/previous.svg" alt="next" />
+      </button>
     </div>
     <div class="controls__right">
-      <div class="controls__like"><img class="icon__share" src="@/assets/icons/favorite.svg" alt="favorite" /></div>
+      <button class="button button--like">
+        <img class="icon" src="@/assets/icons/favorite.svg" alt="favorite" />
+      </button>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "Controls"
+  name: "Controls",
+  components: {}
 };
 </script>
 
@@ -43,14 +46,6 @@ export default {
     flex: 1 1 50px;
   }
 
-  &__share,
-  &__like {
-    @include flex-center;
-    background-color: white;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-  }
   &__center {
     @include flex-center;
     flex: 3 3 150px;
@@ -60,25 +55,32 @@ export default {
     flex: 1 1 50px;
   }
 
-  &__prev,
-  &__play,
-  &__next {
+  .button {
     @include flex-center;
-    color: white;
-    background-color: #60558f;
+    background-color: white;
     width: 36px;
     height: 36px;
     border-radius: 50%;
-  }
+    cursor: pointer;
+    border: none;
 
-  &__play {
-    margin: 0 20px 0 20px;
-    width: 50px;
-    height: 50px;
-  }
+    &--prev,
+    &--play,
+    &--next {
+      @include flex-center;
+      color: white;
+      background-color: #60558f;
+    }
 
-  &__next {
-    transform: rotate(180deg);
+    &--play {
+      margin: 0 20px 0 20px;
+      width: 50px;
+      height: 50px;
+    }
+
+    &--next {
+      transform: rotate(180deg);
+    }
   }
 }
 </style>

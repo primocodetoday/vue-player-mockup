@@ -36,6 +36,7 @@ export default {
   &__icon {
     margin-right: 25px;
     filter: invert(0%) sepia(6%) saturate(391%) hue-rotate(280deg) brightness(120%);
+    cursor: pointer;
 
     &:last-child {
       margin-right: 0;
@@ -46,6 +47,8 @@ export default {
     position: absolute;
     right: 20px;
     top: 32px;
+    height: 13px;
+    width: 16px;
     cursor: pointer;
 
     &__element {
