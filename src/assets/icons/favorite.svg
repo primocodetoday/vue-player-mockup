@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" viewBox="0 0 14 12">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #ed5e74;
+      }
+    </style>
+  </defs>
+  <path id="favorite_2" data-name="favorite 2" class="cls-1" d="M353.5,468.8a3.826,3.826,0,0,0-3.755-3.8,3.745,3.745,0,0,0-3.243,1.884A3.746,3.746,0,0,0,343.257,465a3.825,3.825,0,0,0-3.755,3.8c-.156,4.761,7,8.2,7,8.2S353.652,473.566,353.5,468.8Z" transform="translate(-339.5 -465)"/>
+</svg>

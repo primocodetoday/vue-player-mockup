@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import TopOptions from "@/components/TopOptions.vue";
-import Title from "@/components/Title.vue";
+import TopOptions from "@/components/modules/TopOptions.vue";
+import Title from "@/components/modules/Title.vue";
 
 export default {
   name: "Panel",
@@ -28,6 +28,6 @@ export default {
   background-position: top;
   background-size: 412px 412px;
   background-image: url("../../assets/images/icona_pop.webp");
-  filter: saturate(0.8) opacity(0.8);
+  filter: saturate(1) opacity(0.8);
 }
 </style>
