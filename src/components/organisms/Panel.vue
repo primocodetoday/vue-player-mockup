@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <TopOptions />
-    <Title :current="current" />
+    <Title />
   </div>
 </template>
 
@@ -11,12 +11,6 @@ import Title from "@/components/molecules/Title.vue";
 
 export default {
   name: "Panel",
-  props: {
-    current: {
-      type: Object,
-      required: true
-    }
-  },
   components: {
     TopOptions,
     Title

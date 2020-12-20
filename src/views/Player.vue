@@ -1,6 +1,6 @@
 <template>
   <div class="player">
-    <Panel :current="current" />
+    <Panel />
     <Progress />
     <Controls />
   </div>
@@ -17,12 +17,6 @@ export default {
     Controls,
     Panel,
     Progress
-  },
-  props: {
-    current: {
-      type: Object,
-      required: true
-    }
   }
 };
 </script>

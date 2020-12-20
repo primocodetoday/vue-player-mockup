@@ -6,14 +6,14 @@
       </button>
     </div>
     <div class="controls__center">
-      <button class="button button--prev" @click="handleNext(-1)">
+      <button class="button button--prev" @click="handlePrev()">
         <img class="icon" src="@/assets/icons/previous.svg" alt="previous" />
       </button>
       <button class="button button--play" @click="handlePlay">
         <img v-if="!isPlaying" class="icon" src="@/assets/icons/play.svg" alt="pause" />
         <img v-else class="icon" src="@/assets/icons/pause.svg" alt="pause" />
       </button>
-      <button class="button button--next" @click="handleNext(1)">
+      <button class="button button--next" @click="handleNext()">
         <img class="icon" src="@/assets/icons/previous.svg" alt="next" />
       </button>
     </div>
@@ -38,8 +38,11 @@ export default {
     handlePlay() {
       this.isPlaying = !this.isPlaying;
     },
-    handleNext(choose) {
-      this.$root.$children[0].handleNext(choose);
+    handleNext() {
+      this.$store.commit("nextSong");
+    },
+    handlePrev() {
+      this.$store.commit("prevSong");
     }
   }
 };

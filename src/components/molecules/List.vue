@@ -11,14 +11,13 @@ import Song from "@/components/atoms/Song.vue";
 
 export default {
   name: "List",
-  props: {
-    elements: {
-      type: Array,
-      required: true
-    }
-  },
   components: {
     Song
+  },
+  computed: {
+    elements() {
+      return this.$store.state.songs;
+    }
   }
 };
 </script>

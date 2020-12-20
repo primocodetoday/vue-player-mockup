@@ -22,7 +22,7 @@ export default {
   },
   methods: {
     handleChange(item) {
-      this.$root.$children[0].handleChange(item);
+      this.$store.commit("changeSong", item);
       this.$router.push("/");
     }
   }

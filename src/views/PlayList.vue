@@ -8,7 +8,7 @@
       </router-link>
       <h1 class="playlist__header">Playlist</h1>
     </div>
-    <List :elements="songs" />
+    <List />
   </div>
 </template>
 
@@ -17,12 +17,6 @@ import List from "@/components/molecules/List.vue";
 
 export default {
   name: "PlayList",
-  props: {
-    songs: {
-      type: Array,
-      required: true
-    }
-  },
   components: {
     List
   }

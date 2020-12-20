@@ -1,8 +1,8 @@
 <template>
   <div class="title">
     <div class="title__wrapper">
-      <p class="title__artist">{{ current.artist }}</p>
-      <p class="title__song">{{ current.title }}</p>
+      <p class="title__artist">{{ currentSong.artist }}</p>
+      <p class="title__song">{{ currentSong.title }}</p>
     </div>
   </div>
 </template>
@@ -10,10 +10,9 @@
 <script>
 export default {
   name: "Title",
-  props: {
-    current: {
-      type: Object,
-      required: true
+  computed: {
+    currentSong() {
+      return this.$store.getters.getCurrentSong;
     }
   }
 };

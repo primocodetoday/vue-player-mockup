@@ -13,14 +13,12 @@ const routes = [
   {
     path: "/player",
     name: "Player",
-    component: Player,
-    props: route => ({ query: route.query.current })
+    component: Player
   },
   {
     path: "/playlist",
     name: "Playlist",
-    component: PlayList,
-    props: route => ({ query: route.query.songs })
+    component: PlayList
   }
 ];
 
