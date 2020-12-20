@@ -58,6 +58,15 @@ export default {
     width: 16px;
     cursor: pointer;
     transition: transform 0.2s linear;
+    &:after {
+      content: "";
+      position: absolute;
+      background: transparent;
+      height: 30px;
+      width: 30px;
+      top: -12px;
+      left: -7px;
+    }
 
     &:hover {
       transform: scale(1.15);
