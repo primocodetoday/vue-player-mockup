@@ -1,34 +1,26 @@
 <template>
   <div class="controls">
     <div class="controls__left">
-      <button class="button button--share">
-        <img class="icon" src="@/assets/icons/share.svg" alt="share" />
-      </button>
+      <ButtonIcon icon="share" />
     </div>
     <div class="controls__center">
-      <button class="button button--prev" @click="handlePrev()">
-        <img class="icon" src="@/assets/icons/previous.svg" alt="previous" />
-      </button>
-      <button class="button button--play" @click="handlePlay">
-        <img v-if="!isPlaying" class="icon" src="@/assets/icons/play.svg" alt="pause" />
-        <img v-else class="icon" src="@/assets/icons/pause.svg" alt="pause" />
-      </button>
-      <button class="button button--next" @click="handleNext()">
-        <img class="icon" src="@/assets/icons/previous.svg" alt="next" />
-      </button>
+      <ButtonIcon icon="previous" color="#60558f" @click.native="handlePrev" />
+      <ButtonIcon v-if="isPlaying" icon="play" big color="#60558f" @click.native="handlePlay" />
+      <ButtonIcon v-else icon="pause" big color="#60558f" @click.native="handlePlay" />
+      <ButtonIcon icon="previous" rotate color="#60558f" @click.native="handleNext" />
     </div>
     <div class="controls__right">
-      <button class="button button--like">
-        <img class="icon" src="@/assets/icons/favorite.svg" alt="favorite" />
-      </button>
+      <ButtonIcon icon="favorite" />
     </div>
   </div>
 </template>
 
 <script>
+import ButtonIcon from "@/components/atoms/ButtonIcon.vue";
+
 export default {
   name: "Controls",
-  components: {},
+  components: { ButtonIcon },
   data() {
     return {
       isPlaying: false
@@ -70,42 +62,6 @@ export default {
   &__right {
     @include flex-center;
     flex: 1 1 50px;
-  }
-
-  .button {
-    @include flex-center;
-    background-color: white;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    cursor: pointer;
-    border: none;
-    transition: transform 0.3s linear;
-    &:hover {
-      transform: scale(1.1);
-    }
-
-    &--prev,
-    &--play,
-    &--next {
-      @include flex-center;
-      color: white;
-      background-color: #60558f;
-    }
-
-    &--play {
-      margin: 0 20px 0 20px;
-      width: 50px;
-      height: 50px;
-    }
-
-    &--next {
-      transform: rotate(180deg);
-
-      &:hover {
-        transform: rotate(180deg) scale(1.1);
-      }
-    }
   }
 }
 </style>

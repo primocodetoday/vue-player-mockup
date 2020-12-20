@@ -2,9 +2,7 @@
   <div class="playlist">
     <div class="playlist__top">
       <router-link :to="{ name: 'Player' }">
-        <button class="button button--back">
-          <img class="icon" src="@/assets/icons/back.svg" alt="back" />
-        </button>
+        <ButtonIcon class="playlist__back" icon="back" />
       </router-link>
       <h1 class="playlist__header">Playlist</h1>
     </div>
@@ -14,11 +12,13 @@
 
 <script>
 import List from "@/components/molecules/List.vue";
+import ButtonIcon from "@/components/atoms/ButtonIcon.vue";
 
 export default {
   name: "PlayList",
   components: {
-    List
+    List,
+    ButtonIcon
   }
 };
 </script>
@@ -44,17 +44,10 @@ export default {
     font-weight: bold;
     font-size: 2.2rem;
   }
-}
-.button {
-  @include flex-center;
-  background-color: white;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  cursor: pointer;
-  border: none;
-  position: absolute;
-  top: 20px;
-  left: 26px;
+  &__back {
+    position: absolute;
+    top: 20px;
+    left: 26px;
+  }
 }
 </style>
