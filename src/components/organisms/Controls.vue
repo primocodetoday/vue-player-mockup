@@ -39,11 +39,7 @@ export default {
       this.isPlaying = !this.isPlaying;
     },
     handleNext(choose) {
-      let vm = this.$parent;
-      while (vm) {
-        vm.$emit("handleNext", choose);
-        vm = vm.$parent;
-      }
+      this.$root.$children[0].handleNext(choose);
     }
   }
 };

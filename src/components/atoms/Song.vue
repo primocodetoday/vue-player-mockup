@@ -22,11 +22,7 @@ export default {
   },
   methods: {
     handleChange(item) {
-      let vm = this.$parent;
-      while (vm) {
-        vm.$emit("handleChange", item);
-        vm = vm.$parent;
-      }
+      this.$root.$children[0].handleChange(item);
       this.$router.push("/");
     }
   }
